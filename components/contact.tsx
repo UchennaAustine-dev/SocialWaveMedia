@@ -145,7 +145,7 @@ export default function Contact() {
               </p>
               <div className="bg-white p-3 sm:p-4 rounded-lg shadow-md">
                 <Image
-                  src="/images/packages-flyer.jpeg"
+                  src="/images/packages-flyer.png"
                   alt="QR Code"
                   width={120}
                   height={120}

@@ -208,33 +208,33 @@ export default function Hero() {
             style={{
               backgroundImage: `linear-gradient(to right, rgba(45, 252, 191, 0.1) 1px, transparent 1px), 
                                linear-gradient(to bottom, rgba(45, 252, 191, 0.1) 1px, transparent 1px)`,
-              backgroundSize: "60px 60px",
+              backgroundSize: "40px 40px",
             }}
           />
         </div>
 
         {/* Subtle glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon/5 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-neon/5 rounded-full blur-[80px] sm:blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-neon/5 rounded-full blur-[80px] sm:blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-8rem)] lg:min-h-0">
           {/* Content Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             {/* Professional Tagline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-6"
+              className="mb-4 sm:mb-6"
             >
-              <span className="inline-block py-1 px-3 bg-neon/10 border border-neon/20 rounded-full text-neon text-sm font-medium tracking-wide">
+              <span className="inline-block py-1 px-3 bg-neon/10 border border-neon/20 rounded-full text-neon text-xs sm:text-sm font-medium tracking-wide">
                 PREMIUM DIGITAL MARKETING AGENCY
               </span>
             </motion.div>
@@ -245,9 +245,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight tracking-tight mb-4 sm:mb-6"
             >
-              Elevate Your <span className="text-neon">Digital Presence</span>
+              Elevate Your{" "}
+              <span className="text-neon block xs:inline">
+                Digital Presence
+              </span>
             </motion.h1>
 
             {/* Professional Subheading */}
@@ -255,123 +258,134 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0"
             >
               We craft sophisticated digital strategies that transform brands
               and drive measurable business growth through data-driven marketing
               solutions.
             </motion.p>
 
-            {/* Professional Stats */}
+            {/* Professional Stats - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-3 gap-6 mb-10"
+              className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 sm:mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0"
             >
-              <div className="border-l-2 border-neon/30 pl-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white">
+              <div className="border-l-2 border-neon/30 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                   50+
                 </div>
-                <div className="text-sm text-gray-400">Satisfied Clients</div>
+                <div className="text-xs sm:text-sm text-gray-400 leading-tight">
+                  Satisfied Clients
+                </div>
               </div>
-              <div className="border-l-2 border-neon/30 pl-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white">
+              <div className="border-l-2 border-neon/30 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                   120+
                 </div>
-                <div className="text-sm text-gray-400">Projects Delivered</div>
+                <div className="text-xs sm:text-sm text-gray-400 leading-tight">
+                  Projects Delivered
+                </div>
               </div>
-              <div className="border-l-2 border-neon/30 pl-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white">
+              <div className="border-l-2 border-neon/30 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                   240%
                 </div>
-                <div className="text-sm text-gray-400">Average ROI</div>
+                <div className="text-xs sm:text-sm text-gray-400 leading-tight">
+                  Average ROI
+                </div>
               </div>
             </motion.div>
 
-            {/* Professional CTA Buttons */}
+            {/* Professional CTA Buttons - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0"
             >
               <Button
                 size="lg"
-                className="bg-neon text-navy hover:bg-neon/90 font-semibold text-base px-8 py-6 shadow-lg shadow-neon/20"
+                className="bg-neon text-navy hover:bg-neon/90 font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 shadow-lg shadow-neon/20 w-full sm:w-auto"
               >
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="hidden xs:inline">Schedule Consultation</span>
+                <span className="xs:hidden">Get Started</span>
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10 font-semibold text-base px-8 py-6 bg-transparent"
+                className="border-white/20 text-white hover:bg-white/10 font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto"
               >
-                <Play className="mr-2 h-5 w-5" />
-                View Case Studies
+                <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="hidden xs:inline">View Case Studies</span>
+                <span className="xs:hidden">Our Work</span>
               </Button>
             </motion.div>
 
-            {/* Trust Indicators */}
+            {/* Trust Indicators - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="mt-12 flex items-center space-x-6"
+              className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-6"
             >
-              <div className="text-sm text-gray-400">Trusted by:</div>
-              <div className="flex space-x-6">
-                <div className="text-white/70 font-medium text-sm">
+              <div className="text-xs sm:text-sm text-gray-400">
+                Trusted by:
+              </div>
+              <div className="flex space-x-4 sm:space-x-6">
+                <div className="text-white/70 font-medium text-xs sm:text-sm">
                   ENTERPRISE
                 </div>
-                <div className="text-white/70 font-medium text-sm">
+                <div className="text-white/70 font-medium text-xs sm:text-sm">
                   STARTUPS
                 </div>
-                <div className="text-white/70 font-medium text-sm">
+                <div className="text-white/70 font-medium text-xs sm:text-sm">
                   E-COMMERCE
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Image Column */}
+          {/* Image Column - Mobile Optimized */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block relative"
+            className="relative order-1 lg:order-2"
           >
-            <div className="relative h-[600px] w-full">
+            <div className="relative h-64 xs:h-80 sm:h-96 lg:h-[500px] xl:h-[600px] w-full">
               {/* Premium Image with Overlay */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="absolute inset-0 rounded-xl lg:rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl border border-white/10">
                 <Image
                   src="/images/branding-flyer.jpeg"
                   alt="Social Wave Media - Digital Marketing Excellence"
                   fill
                   className="object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-navy/80 to-transparent" />
               </div>
 
-              {/* Professional Overlay Elements */}
-              <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-neon rounded-full">
+              {/* Professional Overlay Elements - Mobile Responsive */}
+              <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8 p-4 sm:p-6 bg-white/10 backdrop-blur-md rounded-lg lg:rounded-xl border border-white/20">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="p-2 sm:p-3 bg-neon rounded-full flex-shrink-0">
                     <Image
                       src="/images/logo-sticker.png"
                       alt="Social Wave Media Logo"
-                      width={40}
-                      height={40}
-                      className="w-8 h-8"
+                      width={32}
+                      height={32}
+                      className="w-6 h-6 sm:w-8 sm:h-8"
                     />
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-lg mb-1">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-white font-semibold text-sm sm:text-base lg:text-lg mb-1 truncate">
                       Social Wave Media
                     </h3>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                       Transforming brands through strategic digital marketing
                       since 2020
                     </p>
@@ -379,23 +393,23 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-neon/20 rounded-full blur-xl" />
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-neon/10 rounded-full blur-xl" />
+              {/* Decorative Elements - Responsive */}
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 lg:-top-6 lg:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-neon/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 lg:-bottom-10 lg:-left-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-neon/10 rounded-full blur-xl" />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Professional Scroll Indicator */}
+      {/* Professional Scroll Indicator - Mobile Optimized */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{
             duration: 2,
             repeat: Number.POSITIVE_INFINITY,
@@ -403,10 +417,10 @@ export default function Hero() {
           }}
           className="flex flex-col items-center"
         >
-          <div className="text-xs text-gray-400 uppercase tracking-widest mb-2">
+          <div className="text-xs text-gray-400 uppercase tracking-widest mb-2 hidden sm:block">
             Discover More
           </div>
-          <div className="w-px h-8 bg-gradient-to-b from-neon to-transparent" />
+          <div className="w-px h-6 sm:h-8 bg-gradient-to-b from-neon to-transparent" />
         </motion.div>
       </motion.div>
     </section>
