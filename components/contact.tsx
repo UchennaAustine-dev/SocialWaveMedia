@@ -26,13 +26,13 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: "08126546300",
+      details: "+234 812 654 6300",
       description: "Mon-Fri from 9am to 6pm",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Digital Avenue, Tech City",
+      details: "Lagos, Nigeria",
       description: "Our creative headquarters",
     },
     {
@@ -244,7 +244,7 @@ export default function Contact() {
                       </label>
                       <Input
                         type="tel"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+234 812 654 6300"
                         className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
                       />
                     </motion.div>

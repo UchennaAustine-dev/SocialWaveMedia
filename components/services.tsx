@@ -30,18 +30,18 @@ export default function Services() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
 
   const services = [
-    {
-      icon: Share2,
-      title: "Social Media Management",
-      description:
-        "Complete social media strategy, content creation, and community management across all platforms.",
-      features: [
-        "Content Strategy",
-        "Daily Posting",
-        "Community Engagement",
-        "Analytics & Reporting",
-      ],
-    },
+    // {
+    //   icon: Share2,
+    //   title: "Social Media Management",
+    //   description:
+    //     "Complete social media strategy, content creation, and community management across all platforms.",
+    //   features: [
+    //     "Content Strategy",
+    //     "Daily Posting",
+    //     "Community Engagement",
+    //     "Analytics & Reporting",
+    //   ],
+    // },
     {
       icon: Target,
       title: "Paid Advertising",

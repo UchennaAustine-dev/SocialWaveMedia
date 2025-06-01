@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Zap, Award } from "lucide-react";
+import { Users, Target, Zap, Calendar } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -17,10 +17,10 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   const stats = [
-    { icon: Users, label: "Happy Clients", value: "500+" },
-    { icon: Target, label: "Campaigns Launched", value: "1,200+" },
-    { icon: Zap, label: "ROI Average", value: "340%" },
-    { icon: Award, label: "Industry Awards", value: "25+" },
+    { icon: Users, label: "Happy Clients", value: "50+" },
+    { icon: Target, label: "Projects Completed", value: "120+" },
+    { icon: Zap, label: "Average ROI", value: "240%" },
+    { icon: Calendar, label: "Years Experience", value: "4+" },
   ];
 
   return (
@@ -67,7 +67,7 @@ export default function About() {
               viewport={{ once: true }}
               className="text-base sm:text-lg text-gray-600 mb-8"
             >
-              Founded in 2020, Social Wave Media has helped hundreds of brands
+              Founded in 2020, Social Wave Media has helped dozens of brands
               create meaningful connections with their audiences through
               innovative strategies and data-driven campaigns.
             </motion.p>
