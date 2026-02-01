@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Zap, Calendar } from "lucide-react";
+import { Users, Target, Zap, Calendar, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -13,124 +13,120 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   const stats = [
-    { icon: Users, label: "Happy Clients", value: "50+" },
-    { icon: Target, label: "Projects Completed", value: "120+" },
-    { icon: Zap, label: "Average ROI", value: "240%" },
-    { icon: Calendar, label: "Years Experience", value: "4+" },
+    { icon: Users, label: "CLients", value: "50+" },
+    { icon: Target, label: "Projects", value: "120+" },
+    { icon: Zap, label: "Avg. ROI", value: "240%" },
+    { icon: Calendar, label: "Years", value: "4+" },
   ];
 
   return (
     <section
       id="about"
       ref={containerRef}
-      className="py-16 sm:py-20 lg:py-24 bg-white"
+      className="py-24 sm:py-32 bg-navy relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-neon/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-white/5 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-navy mb-6"
-            >
-              About <span className="text-neon">Social Wave</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-neon text-xs font-bold uppercase tracking-widest mb-8">
+              <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
+              Our Story
+            </div>
+            
+            <motion.h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-black text-white leading-[1.1] mb-8">
+              WE DON'T FOLLOW <span className="text-neon glow italic">TRENDS</span>. WE CREATE THEM.
             </motion.h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-base sm:text-lg text-gray-600 mb-6"
-            >
-              We're not just another marketing agency. We're digital wave
-              riders, surfing the ever-changing currents of social media and
-              digital marketing to bring your brand to new heights.
+            <motion.p className="text-lg sm:text-xl text-gray-400 font-medium mb-8 leading-relaxed">
+              Based in the heart of digital innovation, Social Wave Media is a luxury 
+              digital agency dedicated to brands that refuse to be ordinary. We combine 
+              artistic vision with data precision to dominate the digital landscape.
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-base sm:text-lg text-gray-600 mb-8"
-            >
-              Founded in 2020, Social Wave Media has helped dozens of brands
-              create meaningful connections with their audiences through
-              innovative strategies and data-driven campaigns.
+            <motion.p className="text-gray-500 mb-12 leading-relaxed">
+              Founded in 2020, we've navigated the ever-changing currents of social 
+              media to deliver unprecedented growth for our partners. Our mission is 
+              simple: transform your digital footprint into a massive wave of success.
             </motion.p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 gap-4 lg:gap-6">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  transition={{ delay: 0.1 * index }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
                 >
-                  <Card className="text-center p-4 hover:shadow-lg transition-shadow cursor-hover-trigger">
-                    <CardContent className="p-0">
-                      <stat.icon className="h-8 w-8 text-neon mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-navy">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
-                    </CardContent>
-                  </Card>
+                  <div className="glass-card p-6 group hover:border-neon/30 transition-all cursor-hover-trigger overflow-hidden relative">
+                    <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ArrowUpRight className="w-4 h-4 text-neon" />
+                    </div>
+                    <stat.icon className="h-6 w-6 text-neon mb-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="text-3xl font-heading font-black text-white mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{stat.label}</div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Column - Image */}
+          {/* Right Column - Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
             className="relative"
-            style={{ y, opacity }}
           >
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/branding-flyer.jpeg"
-                alt="Social Wave Media Team"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-neon/20" />
-            </div>
-
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              className="absolute -top-4 -right-4 bg-neon text-navy p-4 rounded-full shadow-lg"
+            <motion.div 
+              style={{ y }}
+              className="relative aspect-[4/5] rounded-[40px] overflow-hidden border border-white/10 glass-card p-4 shadow-3xl"
             >
-              <Zap className="h-6 w-6" />
+              <div className="relative w-full h-full rounded-[30px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                <Image
+                  src="/images/branding-flyer.jpeg"
+                  alt="Social Wave Media Innovation"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60" />
+              </div>
             </motion.div>
 
+            {/* Floating Accents */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-neon/10 rounded-full blur-[60px] animate-pulse" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-[60px]" />
+            
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-              className="absolute -bottom-4 -left-4 bg-white text-navy p-4 rounded-full shadow-lg"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-6 -right-6 hidden sm:block"
             >
-              <Target className="h-6 w-6" />
+              <div className="w-24 h-24 rounded-full border-2 border-dashed border-neon/30 flex items-center justify-center p-4">
+                <div className="text-[8px] font-black text-neon text-center uppercase tracking-tighter">
+                  ESTD. 2020 • DIGITAL EXCELLENCE •
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

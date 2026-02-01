@@ -1,191 +1,139 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Share2,
-  Target,
-  PenTool,
-  BarChart3,
-  Megaphone,
-  Smartphone,
+import { motion } from "framer-motion";
+import { 
+  ArrowUpRight, 
+  Megaphone, 
+  Target, 
+  PenTool, 
+  BarChart3, 
+  Globe 
 } from "lucide-react";
-import { useRef } from "react";
 import Image from "next/image";
 
+const services = [
+  {
+    title: "Strategy & Intelligence",
+    description: "Data-driven roadmaps to navigate the digital landscape.",
+    icon: Target,
+    image: "/new_images/IMG_0371.JPG.jpeg",
+    size: "col-span-1 lg:col-span-2 row-span-1",
+    color: "bg-blue-500/10",
+  },
+  {
+    title: "Paid Performance",
+    description: "ROI-focused campaigns that scale your business rapidly.",
+    icon: BarChart3,
+    image: "/new_images/IMG_0314.JPG.jpeg",
+    size: "col-span-1 row-span-1 lg:row-span-2",
+    color: "bg-purple-500/10",
+  },
+  {
+    title: "Creative Production",
+    description: "Visual storytelling that stops the scroll and captures attention.",
+    icon: PenTool,
+    image: "/new_images/IMG_0315.JPG.jpeg",
+    size: "col-span-1 row-span-1",
+    color: "bg-neon/10",
+  },
+  {
+    title: "Influencer Relations",
+    description: "Authentic partnerships that build trust and expand reach.",
+    icon: Megaphone,
+    image: "/new_images/IMG_0417.JPG.jpeg",
+    size: "col-span-1 lg:col-span-2 row-span-1",
+    color: "bg-orange-500/10",
+  },
+  {
+    title: "Social Ecosystems",
+    description: "Holistic community management for sustainable brand growth.",
+    icon: Globe,
+    image: "/new_images/IMG_0730.JPG.jpeg",
+    size: "col-span-1 row-span-1",
+    color: "bg-green-500/10",
+  },
+];
+
 export default function Services() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
-
-  const services = [
-    // {
-    //   icon: Share2,
-    //   title: "Social Media Management",
-    //   description:
-    //     "Complete social media strategy, content creation, and community management across all platforms.",
-    //   features: [
-    //     "Content Strategy",
-    //     "Daily Posting",
-    //     "Community Engagement",
-    //     "Analytics & Reporting",
-    //   ],
-    // },
-    {
-      icon: Target,
-      title: "Paid Advertising",
-      description:
-        "ROI-focused ad campaigns on Facebook, Instagram, Google, and LinkedIn that convert.",
-      features: [
-        "Campaign Strategy",
-        "Ad Creative",
-        "Audience Targeting",
-        "Performance Optimization",
-      ],
-    },
-    {
-      icon: PenTool,
-      title: "Content Creation",
-      description:
-        "High-quality visual and written content that tells your brand story and engages your audience.",
-      features: [
-        "Graphic Design",
-        "Video Production",
-        "Copywriting",
-        "Brand Photography",
-      ],
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics & Insights",
-      description:
-        "Data-driven insights and comprehensive reporting to measure and improve your marketing performance.",
-      features: [
-        "Performance Tracking",
-        "ROI Analysis",
-        "Competitor Research",
-        "Growth Strategies",
-      ],
-    },
-    {
-      icon: Megaphone,
-      title: "Influencer Marketing",
-      description:
-        "Connect with the right influencers to amplify your brand message and reach new audiences.",
-      features: [
-        "Influencer Sourcing",
-        "Campaign Management",
-        "Content Collaboration",
-        "Performance Tracking",
-      ],
-    },
-    {
-      icon: Smartphone,
-      title: "Digital Strategy",
-      description:
-        "Comprehensive digital marketing strategies tailored to your business goals and target audience.",
-      features: [
-        "Market Research",
-        "Competitor Analysis",
-        "Strategy Development",
-        "Implementation Planning",
-      ],
-    },
-  ];
-
   return (
-    <section
-      id="services"
-      ref={containerRef}
-      className="py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden"
-    >
-      {/* Background decoration */}
-      <motion.div
-        className="absolute top-20 right-10 opacity-20"
-        style={{ rotate }}
-      >
-        <Image
-          src="/images/logo-sticker.png"
-          alt="Decoration"
-          width={300}
-          height={300}
-          className="w-64 h-64"
-        />
-      </motion.div>
+    <section id="services" className="py-24 sm:py-32 bg-navy relative overflow-hidden">
+      {/* Decorative Blur */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon/5 rounded-full blur-[120px] -mr-64 -mt-64" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <h2 className="hashtag mb-4">Precision Services</h2>
+            <h1 className="text-massive text-white mb-6">
+              CRAFTING <span className="text-neon glow italic">LEGENDS</span> IN THE DIGITAL SPACE
+            </h1>
+            <p className="text-lg text-gray-400">
+              We provide a full spectrum of digital marketing solutions tailored to ambitious 
+              brands ready to dominate their industries.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="hidden md:block"
+          >
+            <button className="flex items-center gap-2 text-neon font-bold uppercase tracking-widest hover:gap-4 transition-all">
+              All Solutions <ArrowUpRight className="w-5 h-5" />
+            </button>
+          </motion.div>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-navy mb-4">
-            Our <span className="text-neon">Services</span>
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-            From strategy to execution, we provide comprehensive digital
-            marketing solutions that drive growth and deliver measurable
-            results.
-          </p>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-[300px] gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              className={`group relative overflow-hidden rounded-3xl glass-card ${service.size}`}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-hover-trigger">
-                <CardHeader className="p-4 sm:p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="p-3 bg-neon/10 rounded-lg group-hover:bg-neon/20 transition-colors">
-                      <service.icon className="h-8 w-8 text-neon" />
-                    </div>
+              {/* Image Layer */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
+              </div>
+
+              {/* Content Layer */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
+                <div className="flex justify-between items-start">
+                  <div className={`p-4 rounded-2xl ${service.color} text-white`}>
+                    <service.icon className="w-6 h-6" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-navy group-hover:text-neon transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 sm:p-6">
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center text-sm text-gray-600"
-                      >
-                        <div className="w-2 h-2 bg-neon rounded-full mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    variant="outline"
-                    className="w-full border-neon text-neon hover:bg-neon hover:text-navy transition-colors"
+                  <motion.div 
+                    whileHover={{ rotate: 45 }}
+                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                   >
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
+                    <ArrowUpRight className="w-5 h-5 text-neon" />
+                  </motion.div>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-neon transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 line-clamp-2 text-sm sm:text-base">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

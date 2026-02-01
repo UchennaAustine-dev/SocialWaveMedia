@@ -12,6 +12,8 @@ import {
   Clock,
   MessageCircle,
   Calendar,
+  Send,
+  ArrowUpRight
 } from "lucide-react";
 import Image from "next/image";
 
@@ -19,336 +21,194 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email Us",
+      title: "Email",
       details: "Socialwavemedia24@gmail.com",
-      description: "Send us an email anytime",
+      description: "Direct access to our specialists",
     },
     {
       icon: Phone,
-      title: "Call Us",
+      title: "Call",
       details: "+234 812 654 6300",
       description: "Mon-Fri from 9am to 6pm",
     },
     {
       icon: MapPin,
-      title: "Visit Us",
+      title: "HQ",
       details: "Lagos, Nigeria",
-      description: "Our creative headquarters",
+      description: "Global service delivery",
     },
     {
       icon: Clock,
-      title: "Business Hours",
+      title: "Hours",
       details: "Mon-Fri: 9AM-6PM",
-      description: "Weekend support available",
+      description: "24/7 Priority support",
     },
   ];
 
   return (
     <section
       id="contact"
-      className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50"
+      className="py-24 sm:py-32 bg-navy relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 sm:mb-6">
-            Let's Start Your <span className="text-neon">Digital Journey</span>
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to ride the wave of digital success? Get in touch with our
-            team and let's discuss how we can transform your brand's online
-            presence.
-          </p>
-        </motion.div>
+      {/* Background Decor */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(45,252,191,0.05)_0%,transparent_70%)]" />
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Contact Information - Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:col-span-4 space-y-6"
-          >
-            {/* Contact Info Cards */}
-            <div className="space-y-4 sm:space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <Card className="hover:shadow-lg transition-all duration-300 cursor-hover-trigger border-0 shadow-md">
-                    <CardContent className="p-4 sm:p-6">
-                      <div className="flex items-start space-x-3 sm:space-x-4">
-                        <div className="flex-shrink-0 p-2 sm:p-3 bg-neon/10 rounded-lg">
-                          <info.icon className="h-5 w-5 sm:h-6 sm:w-6 text-neon" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-navy mb-1 text-sm sm:text-base">
-                            {info.title}
-                          </h3>
-                          <p className="text-sm sm:text-base lg:text-lg font-medium text-gray-900 mb-1 break-words">
-                            {info.details}
-                          </p>
-                          <p className="text-xs sm:text-sm text-gray-600">
-                            {info.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Quick Action Buttons */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20">
+          
+          {/* Left Column - Contact Details */}
+          <div className="lg:w-1/3">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-3 sm:space-y-4"
+              className="sticky top-32"
             >
-              <Button className="w-full bg-neon text-navy hover:bg-neon/90 font-semibold py-3 sm:py-4 text-sm sm:text-base cursor-hover-trigger">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Start Live Chat
-              </Button>
-              <Button
-                variant="outline"
-                className="w-full border-navy text-navy hover:bg-navy hover:text-white py-3 sm:py-4 text-sm sm:text-base cursor-hover-trigger"
-              >
-                <Calendar className="mr-2 h-4 w-4" />
-                Schedule a Call
-              </Button>
-            </motion.div>
-
-            {/* QR Code Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center text-center pt-4 sm:pt-6"
-            >
-              <p className="text-navy font-medium mb-3 text-sm sm:text-base">
-                Scan to connect with us
-              </p>
-              <div className="bg-white p-3 sm:p-4 rounded-lg shadow-md">
-                <Image
-                  src="/images/packages-flyer.png"
-                  alt="QR Code"
-                  width={120}
-                  height={120}
-                  className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32"
-                />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-neon text-xs font-bold uppercase tracking-widest mb-8">
+                Connect
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 mt-2">#STAYWAVY</p>
+              
+              <h2 className="text-4xl sm:text-5xl font-heading font-black text-white leading-tight mb-8">
+                LET'S START THE <span className="text-neon glow italic">CONVERSATION</span>
+              </h2>
+              
+              <p className="text-gray-400 text-lg mb-12">
+                Ready to ride the wave? Our team is waiting to transform 
+                your digital presence into a dominant market force.
+              </p>
+
+              <div className="grid gap-6">
+                {contactInfo.map((info, index) => (
+                  <motion.div
+                    key={info.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="glass-card p-6 group cursor-hover-trigger"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-300">
+                        <info.icon size={20} />
+                      </div>
+                      <div>
+                        <h3 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-1">{info.title}</h3>
+                        <p className="text-white font-medium text-sm break-all">{info.details}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Contact Form - Right Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:col-span-8"
-          >
-            <Card className="shadow-xl border-0">
-              <CardContent className="p-6 sm:p-8 lg:p-10">
-                <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-navy mb-2 sm:mb-3">
-                    Send Us a Message
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600">
-                    Fill out the form below and we'll get back to you within 24
-                    hours.
-                  </p>
-                </div>
+          {/* Right Column - Form */}
+          <div className="lg:w-2/3">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 sm:p-12 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-96 h-96 bg-neon/10 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">Project Brief</h3>
+                <p className="text-gray-400 mb-10">Brief us on your goals, and we'll craft the strategy.</p>
 
-                <form className="space-y-4 sm:space-y-6">
-                  {/* Name Fields */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        First Name *
-                      </label>
-                      <Input
-                        type="text"
-                        placeholder="John"
-                        required
-                        className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
+                <form className="space-y-8">
+                  <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">First Name</label>
+                      <Input 
+                        placeholder="John" 
+                        className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
                       />
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Last Name *
-                      </label>
-                      <Input
-                        type="text"
-                        placeholder="Doe"
-                        required
-                        className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Last Name</label>
+                      <Input 
+                        placeholder="Doe" 
+                        className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
                       />
-                    </motion.div>
+                    </div>
                   </div>
 
-                  {/* Email and Phone */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <Input
+                  <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Email Address</label>
+                      <Input 
                         type="email"
-                        placeholder="john@example.com"
-                        required
-                        className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
+                        placeholder="john@example.com" 
+                        className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
                       />
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <Input
-                        type="tel"
-                        placeholder="+234 812 654 6300"
-                        className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Company</label>
+                      <Input 
+                        placeholder="Your Agency" 
+                        className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
                       />
-                    </motion.div>
+                    </div>
                   </div>
 
-                  {/* Company Name */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Company Name
-                    </label>
-                    <Input
-                      type="text"
-                      placeholder="Your Company"
-                      className="w-full h-10 sm:h-12 px-3 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger"
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Message</label>
+                    <Textarea 
+                      placeholder="Describe your vision..." 
+                      rows={5}
+                      className="bg-white/5 border-white/10 rounded-3xl p-6 text-white focus-visible:ring-neon transition-all resize-none"
                     />
-                  </motion.div>
-
-                  {/* Message */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      How can we help you? *
-                    </label>
-                    <Textarea
-                      placeholder="Tell us about your project, goals, and how we can help you achieve them..."
-                      rows={4}
-                      className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon focus:border-transparent transition-colors cursor-hover-trigger resize-none"
-                      required
-                    />
-                  </motion.div>
-
-                  {/* Checkboxes */}
-                  <div className="space-y-3 sm:space-y-4">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.7 }}
-                      viewport={{ once: true }}
-                      className="flex items-start space-x-3"
-                    >
-                      <input
-                        type="checkbox"
-                        id="newsletter"
-                        className="w-4 h-4 mt-0.5 text-neon border-gray-300 rounded focus:ring-neon cursor-hover-trigger flex-shrink-0"
-                      />
-                      <label
-                        htmlFor="newsletter"
-                        className="text-sm text-gray-600 leading-relaxed"
-                      >
-                        Subscribe to our newsletter for digital marketing tips
-                        and insights
-                      </label>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.8 }}
-                      viewport={{ once: true }}
-                      className="flex items-start space-x-3"
-                    >
-                      <input
-                        type="checkbox"
-                        id="terms"
-                        required
-                        className="w-4 h-4 mt-0.5 text-neon border-gray-300 rounded focus:ring-neon cursor-hover-trigger flex-shrink-0"
-                      />
-                      <label
-                        htmlFor="terms"
-                        className="text-sm text-gray-600 leading-relaxed"
-                      >
-                        I agree to the Terms of Service and Privacy Policy *
-                      </label>
-                    </motion.div>
                   </div>
 
-                  {/* Submit Button */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
-                    viewport={{ once: true }}
-                    className="pt-2"
-                  >
-                    <Button
-                      type="submit"
-                      className="w-full bg-neon text-navy hover:bg-neon/90 font-semibold text-base sm:text-lg py-4 sm:py-6 cursor-hover-trigger transition-all duration-300 hover:shadow-lg"
-                    >
-                      Send Message #STAYWAVY
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-4">
+                    <div className="flex items-start gap-3 max-w-sm">
+                      <input 
+                        type="checkbox" 
+                        className="mt-1 w-4 h-4 bg-white/5 border-white/10 rounded cursor-pointer checked:bg-neon"
+                      />
+                      <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                        I agree to receive communications and have read the Privacy Policy.
+                      </p>
+                    </div>
+                    
+                    <Button className="w-full sm:w-auto bg-neon text-navy font-black h-16 px-12 rounded-2xl hover:shadow-[0_0_30px_rgba(45,252,191,0.3)] transition-all flex items-center gap-3">
+                      SEND MESSAGE <Send size={18} />
                     </Button>
-                  </motion.div>
+                  </div>
                 </form>
-              </CardContent>
-            </Card>
-          </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Quick Actions */}
+            <div className="grid sm:grid-cols-2 gap-6 mt-12">
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="glass-card p-6 flex flex-col items-center text-center group cursor-hover-trigger"
+              >
+                <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-neon mb-4 group-hover:scale-110 transition-transform">
+                  <MessageCircle size={20} />
+                </div>
+                <h4 className="text-white font-bold mb-1">WhatsApp Chat</h4>
+                <p className="text-xs text-gray-500">Instant response during hours</p>
+                <ArrowUpRight className="w-4 h-4 text-neon mt-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="glass-card p-6 flex flex-col items-center text-center group cursor-hover-trigger"
+              >
+                <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-neon mb-4 group-hover:scale-110 transition-transform">
+                  <Calendar size={20} />
+                </div>
+                <h4 className="text-white font-bold mb-1">Schedule Call</h4>
+                <p className="text-xs text-gray-500">Book a strategy session</p>
+                <ArrowUpRight className="w-4 h-4 text-neon mt-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

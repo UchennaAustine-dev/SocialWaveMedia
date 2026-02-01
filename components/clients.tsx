@@ -1,188 +1,173 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Utensils, Heart, Sparkles } from "lucide-react";
+import { Building2, Utensils, Heart, Sparkles, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Clients() {
   const clients = [
     {
       name: "TASTEMATIC NGR",
-      industry: "Food & Beverage",
-      description: "Premium food delivery and culinary experiences",
+      industry: "Digital Dining",
+      description: "Pioneers in high-end culinary experiences and digital food ecosystems.",
       icon: Utensils,
-      color: "from-orange-500 to-red-500",
-      services: [
-        "Social Media Management",
-        "Content Creation",
-        "Brand Strategy",
-      ],
+      color: "from-orange-500/20 to-red-500/20",
+      services: ["Social Management", "Content Creation", "Brand Strategy"],
     },
     {
       name: "Filthy Luxe",
       industry: "Luxury Fashion",
-      description: "High-end fashion and luxury lifestyle brand",
+      description: "Defining modern luxury through curated fashion and cinematic lifestyle.",
       icon: Sparkles,
-      color: "from-purple-500 to-pink-500",
-      services: ["Influencer Marketing", "Visual Content", "Brand Positioning"],
+      color: "from-purple-500/20 to-pink-500/20",
+      services: ["Influencer Marketing", "Visual Content", "Positioning"],
     },
     {
       name: "Pure Aura Spa",
-      industry: "Wellness & Beauty",
-      description: "Premium spa and wellness services",
+      industry: "Wellness",
+      description: "A sanctuary of premium beauty and holistic wellness optimization.",
       icon: Heart,
-      color: "from-green-500 to-teal-500",
-      services: ["Digital Marketing", "Customer Engagement", "Online Presence"],
+      color: "from-green-500/20 to-teal-500/20",
+      services: ["Digital Marketing", "Engagement", "Presence"],
     },
     {
       name: "Nugatto FSD",
-      industry: "Food Service",
-      description: "Innovative food service and distribution",
+      industry: "Enterprise",
+      description: "Innovative logistics and distribution for the modern food industry.",
       icon: Building2,
-      color: "from-blue-500 to-indigo-500",
-      services: ["Market Expansion", "Digital Strategy", "Lead Generation"],
+      color: "from-blue-500/20 to-indigo-500/20",
+      services: ["Strategy", "Lead Generation", "Expansion"],
     },
     {
-      name: "Saburi Ademola Foundation",
-      industry: "Non-Profit",
-      description: "Community development and social impact",
+      name: "Ademola Foundation",
+      industry: "Philanthropy",
+      description: "Driving social impact through powerful storytelling and community building.",
       icon: Heart,
-      color: "from-red-500 to-pink-500",
-      services: ["Awareness Campaigns", "Community Outreach", "Fundraising"],
+      color: "from-red-500/20 to-pink-500/20",
+      services: ["Campaigns", "Community Outreach", "Impact"],
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
   return (
-    <section id="clients" className="py-16 sm:py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="clients" className="py-24 sm:py-32 bg-navy relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+        <div className="absolute top-1/2 -right-1/4 w-1/2 h-1/2 bg-neon/20 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 sm:mb-6">
-            Trusted by <span className="text-neon">Leading Brands</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-neon text-xs font-bold uppercase tracking-widest mb-8">
+            <Sparkles className="w-3 h-3" />
+            Partnerships
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-black text-white leading-tight mb-8">
+            DOMINATING WITH <span className="text-neon glow italic">LEADERS</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We've had the privilege of working with amazing brands across
-            various industries, helping them achieve remarkable growth and
-            digital transformation.
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            We partner with ambitious brands to navigate the digital currents and 
+            achieve unprecedented scaling and market authority.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="cursor-hover-trigger"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="group cursor-hover-trigger"
             >
-              <Card className="h-full hover:shadow-2xl transition-all duration-300 group overflow-hidden border-0 shadow-lg">
-                <div className={`h-2 bg-gradient-to-r ${client.color}`} />
+              <div className="h-full glass-card p-8 sm:p-10 relative overflow-hidden transition-all group-hover:border-neon/30">
+                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${client.color} opacity-30 group-hover:opacity-100 transition-opacity`} />
+                
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-500">
+                    <client.icon size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-heading font-bold text-white group-hover:text-neon transition-colors">
+                      {client.name}
+                    </h3>
+                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{client.industry}</div>
+                  </div>
+                </div>
 
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div
-                      className={`p-3 rounded-xl bg-gradient-to-r ${client.color} text-white shadow-lg`}
-                    >
-                      <client.icon className="h-6 w-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-navy mb-2 group-hover:text-neon transition-colors">
-                        {client.name}
-                      </h3>
+                <p className="text-gray-400 mb-8 font-medium leading-relaxed">
+                  {client.description}
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {client.services.map((service, sIndex) => (
                       <Badge
-                        variant="secondary"
-                        className="bg-gray-100 text-gray-700 mb-3"
+                        key={sIndex}
+                        className="bg-white/5 text-gray-300 border-white/10 text-[10px] uppercase font-bold tracking-widest px-3 py-1 group-hover:border-neon/20 transition-all"
                       >
-                        {client.industry}
+                        {service}
                       </Badge>
-                    </div>
+                    ))}
                   </div>
+                </div>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {client.description}
-                  </p>
-
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-navy text-sm uppercase tracking-wider">
-                      Services Provided
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {client.services.map((service, serviceIndex) => (
-                        <Badge
-                          key={serviceIndex}
-                          variant="outline"
-                          className="text-xs border-neon/30 text-neon hover:bg-neon/10 transition-colors"
-                        >
-                          {service}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                <div className="absolute bottom-10 right-10 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                  <ArrowRight className="text-neon w-5 h-5" />
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 sm:mt-20"
-        >
-          <div className="bg-gradient-to-r from-navy to-navy/90 rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon/10 to-transparent" />
-            <div className="relative">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Join Our Success Stories?
-              </h3>
-              <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                Let's create your brand's digital success story. Join the ranks
-                of our satisfied clients.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-neon text-navy px-8 sm:px-12 py-4 sm:py-6 rounded-xl sm:rounded-2xl font-bold text-lg sm:text-xl hover:bg-neon/90 transition-all duration-300 shadow-xl hover:shadow-2xl cursor-hover-trigger"
-              >
-                Start Your Journey #STAYWAVY
-              </motion.button>
+          {/* Special CTA Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: clients.length * 0.1 }}
+            viewport={{ once: true }}
+            className="group cursor-hover-trigger"
+          >
+            <div className="h-full glass border-neon/20 bg-neon/5 p-8 sm:p-10 rounded-[32px] flex flex-col justify-center items-center text-center relative overflow-hidden group-hover:bg-neon/10 transition-all">
+              <div className="relative z-10 px-4">
+                <h3 className="text-2xl font-heading font-black text-white mb-4">YOUR LOGO HERE</h3>
+                <p className="text-gray-400 mb-8 text-sm font-medium">Be the next brand to ride the wave to digital supremacy.</p>
+                <Button className="bg-neon text-navy font-black h-12 px-8 rounded-xl hover:scale-105 transition-all">
+                  JOIN US
+                </Button>
+              </div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,252,191,0.1)_0%,transparent_70%)]" />
             </div>
+          </motion.div>
+        </div>
+
+        {/* Global Stats or Proof Section could go here */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-32 p-1 bg-gradient-to-r from-neon/40 via-white/10 to-neon/40 rounded-[40px] shadow-3xl overflow-hidden"
+        >
+          <div className="bg-navy rounded-[38px] py-16 px-12 text-center relative overflow-hidden">
+             <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] opacity-5 bg-cover bg-center" />
+             <div className="relative z-10">
+                <h3 className="text-3xl sm:text-4xl font-heading font-black text-white mb-6 uppercase tracking-tighter">
+                  READY TO JOIN OUR <span className="text-neon glow italic">SUCCESS STORIES?</span>
+                </h3>
+                <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+                  Dominance isn't accidental. It's strategic. Let's create your 
+                  digital dominance today.
+                </p>
+                <Button className="bg-neon text-navy font-black h-16 px-12 text-lg rounded-2xl hover:shadow-[0_0_40px_rgba(45,252,191,0.4)] transition-all flex items-center gap-3 mx-auto">
+                  START YOUR SURF #STAYWAVY <ArrowRight size={20} />
+                </Button>
+             </div>
           </div>
         </motion.div>
       </div>
