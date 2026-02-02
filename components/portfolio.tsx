@@ -84,7 +84,7 @@ export default function Portfolio() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className="object-cover group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy/80 sm:block hidden" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent sm:hidden block" />

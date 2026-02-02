@@ -101,7 +101,6 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
               size="lg"
               className="glass text-white border-white/20 hover:bg-white/10 font-bold text-lg px-10 py-7 rounded-full transition-all duration-300 hover:scale-105"
             >
@@ -131,7 +130,7 @@ export default function Hero() {
                     <Star key={i} className="w-3 h-3 fill-current" />
                   ))}
                 </div>
-                <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Trusted by 500+ clients</p>
+                <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Trusted by 50+ clients</p>
               </div>
             </div>
             
@@ -159,7 +158,7 @@ export default function Hero() {
               src="/images/branding-flyer.jpeg"
               alt="Work Preview"
               fill
-              className="object-cover opacity-60"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent" />
           </div>

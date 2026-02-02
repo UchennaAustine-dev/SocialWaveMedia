@@ -102,7 +102,7 @@ export default function About() {
               style={{ y }}
               className="relative aspect-[4/5] rounded-[40px] overflow-hidden border border-white/10 glass-card p-4 shadow-3xl"
             >
-              <div className="relative w-full h-full rounded-[30px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+              <div className="relative w-full h-full rounded-[30px] overflow-hidden transition-all duration-700">
                 <Image
                   src="/images/branding-flyer.jpeg"
                   alt="Social Wave Media Innovation"

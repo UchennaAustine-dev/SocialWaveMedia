@@ -53,14 +53,14 @@ export default function Navbar() {
           isScrolled ? "glass-dark shadow-2xl" : "bg-transparent"
         }`}>
           <div className="flex justify-between items-center">
-            <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
-              <a href="#home" className="block">
+            <motion.div whileHover={{ scale: 1.02 }} className="flex-shrink-0">
+              <a href="#home" className="block p-2 glass rounded-2xl border border-white/5 shadow-inner">
                 <Image
                   src="/images/logo.jpg"
                   alt="Social Wave Media"
-                  width={150}
-                  height={60}
-                  className="h-10 w-auto brightness-110"
+                  width={140}
+                  height={50}
+                  className="h-8 w-auto brightness-110 rounded-lg"
                 />
               </a>
             </motion.div>
