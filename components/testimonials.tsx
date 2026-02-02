@@ -125,8 +125,8 @@ export default function Testimonials() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Image Section */}
                 <div className="relative group">
-                  <div className="relative w-full aspect-square max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-2 border-white/10 glass-card p-3">
-                    <div className="relative w-full h-full rounded-[30px] overflow-hidden">
+                  <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden rounded-[32px] sm:rounded-[40px] border-2 border-white/10 glass-card p-2 sm:p-3">
+                    <div className="relative w-full h-full rounded-[24px] sm:rounded-[30px] overflow-hidden">
                       <Image
                         src={testimonials[activeIndex].image}
                         alt={testimonials[activeIndex].name}
@@ -136,20 +136,20 @@ export default function Testimonials() {
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
                     </div>
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-neon rounded-full flex items-center justify-center shadow-2xl rotate-12 hidden md:flex">
-                    <Quote className="w-8 h-8 text-navy" />
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 bg-neon rounded-full flex items-center justify-center shadow-2xl rotate-12 hidden md:flex">
+                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-navy" />
                   </div>
                 </div>
 
                 {/* Text Content */}
                 <div className="text-left">
-                  <div className="flex text-neon mb-6">
+                  <div className="flex text-neon mb-4 sm:mb-6">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-6 h-6 fill-current mr-1" />
+                      <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-current mr-1" />
                     ))}
                   </div>
                   
-                  <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-heading font-medium text-white italic leading-tight mb-8">
+                  <blockquote className="text-lg sm:text-3xl lg:text-4xl font-heading font-medium text-white italic leading-tight mb-8">
                     "{testimonials[activeIndex].text}"
                   </blockquote>
 

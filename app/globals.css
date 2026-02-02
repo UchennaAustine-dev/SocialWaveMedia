@@ -229,7 +229,7 @@
   }
 
   .text-massive {
-    @apply text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1] tracking-tighter;
+    @apply text-2xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1] tracking-tighter;
   }
 
   /* Hashtag style */
