@@ -132,7 +132,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-8 sm:p-12 relative overflow-hidden"
+              className="glass-card p-6 sm:p-12 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-96 h-96 bg-neon/10 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
               
@@ -144,17 +144,17 @@ export default function Contact() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
-                      className="py-20 text-center"
+                      className="py-16 sm:py-20 text-center"
                     >
-                      <div className="w-20 h-20 bg-neon/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <CheckCircle2 className="w-10 h-10 text-neon" />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-neon/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 text-neon" />
                       </div>
-                      <h3 className="text-3xl font-heading font-bold text-white mb-4">MESSAGE SENT!</h3>
-                      <p className="text-gray-400 text-lg">Our experts will catch your wave within 24 hours.</p>
+                      <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-4 uppercase">Message Sent!</h3>
+                      <p className="text-gray-400 text-base sm:text-lg">Our experts will catch your wave within 24 hours.</p>
                       <Button 
                         variant="ghost" 
                         onClick={() => setStatus("idle")}
-                        className="mt-8 text-neon border-neon/20 hover:bg-neon/10"
+                        className="mt-8 text-neon border-neon/20 hover:bg-neon/10 px-8 h-12 rounded-xl text-xs font-bold uppercase tracking-widest"
                       >
                         Send Another Brief
                       </Button>
@@ -167,16 +167,16 @@ export default function Contact() {
                       exit={{ opacity: 0 }}
                     >
                       <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2">Project Brief</h3>
-                      <p className="text-gray-400 mb-10">Brief us on your goals, and we'll craft the strategy.</p>
+                      <p className="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base">Brief us on your goals, and we'll craft the strategy.</p>
 
-                      <form onSubmit={handleSubmit} className="space-y-8">
-                        <div className="grid sm:grid-cols-2 gap-8">
+                      <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
                           <div className="space-y-2">
                             <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">First Name</label>
                             <Input 
                               required
                               placeholder="John" 
-                              className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
+                              className="bg-white/5 border-white/10 rounded-2xl h-12 sm:h-14 px-5 text-white focus-visible:ring-neon transition-all"
                             />
                           </div>
                           <div className="space-y-2">
@@ -184,26 +184,26 @@ export default function Contact() {
                             <Input 
                               required
                               placeholder="Doe" 
-                              className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
+                              className="bg-white/5 border-white/10 rounded-2xl h-12 sm:h-14 px-5 text-white focus-visible:ring-neon transition-all"
                             />
                           </div>
                         </div>
 
-                        <div className="grid sm:grid-cols-2 gap-8">
+                        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
                           <div className="space-y-2">
                             <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Email Address</label>
                             <Input 
                               required
                               type="email"
                               placeholder="john@example.com" 
-                              className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
+                              className="bg-white/5 border-white/10 rounded-2xl h-12 sm:h-14 px-5 text-white focus-visible:ring-neon transition-all"
                             />
                           </div>
                           <div className="space-y-2">
                             <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Company</label>
                             <Input 
                               placeholder="Your Agency" 
-                              className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 text-white focus-visible:ring-neon transition-all"
+                              className="bg-white/5 border-white/10 rounded-2xl h-12 sm:h-14 px-5 text-white focus-visible:ring-neon transition-all"
                             />
                           </div>
                         </div>
@@ -213,31 +213,31 @@ export default function Contact() {
                           <Textarea 
                             required
                             placeholder="Describe your vision..." 
-                            rows={5}
-                            className="bg-white/5 border-white/10 rounded-3xl p-6 text-white focus-visible:ring-neon transition-all resize-none"
+                            rows={4}
+                            className="bg-white/5 border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-white focus-visible:ring-neon transition-all resize-none"
                           />
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-4">
-                          <div className="flex items-start gap-3 max-w-sm">
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 pt-2">
+                          <div className="flex items-start gap-3 w-full sm:w-auto sm:max-w-sm">
                             <input 
                               required
                               type="checkbox" 
                               className="mt-1 w-4 h-4 bg-white/5 border-white/10 rounded cursor-pointer checked:bg-neon"
                             />
-                            <p className="text-xs text-gray-500 leading-relaxed font-medium">
-                              I agree to receive communications and have read the Privacy Policy.
+                            <p className="text-[10px] sm:text-xs text-gray-500 leading-relaxed font-bold uppercase tracking-wider">
+                              I agree to communications and Privacy Policy.
                             </p>
                           </div>
                           
                           <Button 
                             disabled={status === "submitting"}
-                            className="w-full sm:w-auto bg-neon text-navy font-black h-16 px-12 rounded-2xl hover:shadow-[0_0_30px_rgba(45,252,191,0.3)] transition-all flex items-center gap-3 disabled:opacity-50"
+                            className="w-full sm:w-auto bg-neon text-navy font-black h-14 sm:h-16 px-10 rounded-2xl hover:shadow-[0_0_30px_rgba(45,252,191,0.3)] transition-all flex items-center justify-center gap-3 disabled:opacity-50 text-xs sm:text-sm uppercase tracking-widest"
                           >
                             {status === "submitting" ? (
-                              <>SENDING... <Loader2 size={18} className="animate-spin" /></>
+                              <>SENDING... <Loader2 size={16} className="animate-spin" /></>
                             ) : (
-                              <>SEND MESSAGE <Send size={18} /></>
+                              <>SEND MESSAGE <Send size={16} /></>
                             )}
                           </Button>
                         </div>

@@ -125,19 +125,19 @@ export default function Testimonials() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Image Section */}
                 <div className="relative group">
-                  <div className="relative w-full aspect-square max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-2 border-white/10 glass-card p-3">
+                  <div className="relative w-full aspect-square max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-2 border-white/10 glass-card p-3">
                     <div className="relative w-full h-full rounded-[30px] overflow-hidden">
                       <Image
                         src={testimonials[activeIndex].image}
                         alt={testimonials[activeIndex].name}
                         fill
-                        className="object-cover transition-all duration-700"
+                        className="object-cover transition-all duration-700 hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
                     </div>
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-neon rounded-full flex items-center justify-center shadow-2xl rotate-12 hidden lg:flex">
-                    <Quote className="w-10 h-10 text-navy" />
+                  <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-neon rounded-full flex items-center justify-center shadow-2xl rotate-12 hidden md:flex">
+                    <Quote className="w-8 h-8 text-navy" />
                   </div>
                 </div>
 

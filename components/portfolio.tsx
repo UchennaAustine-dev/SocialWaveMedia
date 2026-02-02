@@ -79,7 +79,7 @@ export default function Portfolio() {
               className="group cursor-hover-trigger"
             >
               <div className="glass-card overflow-hidden h-full flex flex-col sm:flex-row transition-all group-hover:border-neon/30">
-                <div className="relative w-full sm:w-2/5 aspect-[4/5] sm:aspect-auto overflow-hidden">
+                <div className="relative w-full sm:w-2/5 aspect-[16/10] sm:aspect-auto overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -90,24 +90,24 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent sm:hidden block" />
                 </div>
 
-                <div className="p-8 sm:p-10 flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-10 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-[10px] font-bold text-neon uppercase tracking-[0.2em]">{project.category}</div>
+                      <div className="text-[9px] font-bold text-neon uppercase tracking-[0.2em]">{project.category}</div>
                       <TrendingUp className="w-4 h-4 text-neon opacity-50" />
                     </div>
                     
-                    <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-neon transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3 group-hover:text-neon transition-colors">
                       {project.title}
                     </h3>
                     
-                    <p className="text-gray-400 text-sm mb-8 leading-relaxed font-medium">
+                    <p className="text-gray-400 text-xs sm:text-sm mb-6 leading-relaxed font-medium">
                       {project.description}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tags.map((tag, tIndex) => (
-                        <span key={tIndex} className="text-[9px] font-black text-gray-500 uppercase tracking-widest border border-white/10 px-2 py-1 rounded">
+                        <span key={tIndex} className="text-[8px] font-black text-gray-400 uppercase tracking-widest border border-white/10 px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
@@ -115,15 +115,15 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       {project.metrics.map((metric, mIndex) => (
-                        <div key={mIndex} className="text-[10px] font-bold text-white uppercase tracking-tighter bg-white/5 px-2 py-1 rounded">
+                        <div key={mIndex} className="text-[8px] sm:text-[10px] font-bold text-white uppercase tracking-tighter bg-white/5 px-2 py-1 rounded">
                           {metric}
                         </div>
                       ))}
                     </div>
-                    <a href="#contact" className="w-10 h-10 rounded-full glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-300">
-                      <ArrowUpRight size={18} />
+                    <a href="#contact" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-300">
+                      <ArrowUpRight size={16} />
                     </a>
                   </div>
                 </div>

@@ -164,8 +164,8 @@ export default function Clients() {
                   Dominance isn't accidental. It's strategic. Let's create your 
                   digital dominance today.
                 </p>
-                <Button className="bg-neon text-navy font-black h-16 px-12 text-lg rounded-2xl hover:shadow-[0_0_40px_rgba(45,252,191,0.4)] transition-all flex items-center gap-3 mx-auto">
-                  START YOUR SURF #STAYWAVY <ArrowRight size={20} />
+                <Button className="bg-neon text-navy font-black h-14 sm:h-16 px-8 sm:px-12 text-sm sm:text-lg rounded-2xl hover:shadow-[0_0_40px_rgba(45,252,191,0.4)] transition-all flex items-center gap-3 mx-auto max-w-full whitespace-normal text-center">
+                  START YOUR SURF #STAYWAVY <ArrowRight size={20} className="shrink-0" />
                 </Button>
              </div>
           </div>

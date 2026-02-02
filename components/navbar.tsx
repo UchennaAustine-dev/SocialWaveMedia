@@ -113,9 +113,9 @@ export default function Navbar() {
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 10 }}
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              className="md:hidden glass-dark rounded-3xl p-6 border border-white/10 shadow-3xl origin-top"
+              className="md:hidden glass-dark rounded-3xl p-6 border border-white/10 shadow-3xl origin-top mt-2"
             >
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-1">
                 {navItems.map((item, i) => (
                   <motion.a
                     key={item.name}
@@ -123,7 +123,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className={`block px-4 py-4 text-sm font-bold uppercase tracking-widest rounded-xl transition-all ${
+                    className={`block px-5 py-4 text-xs font-bold uppercase tracking-widest rounded-xl transition-all ${
                       activeSection === item.href.substring(1) ? "bg-neon text-navy" : "text-white hover:bg-white/5"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -132,9 +132,11 @@ export default function Navbar() {
                   </motion.a>
                 ))}
                 <div className="pt-4">
-                  <Button className="w-full bg-neon text-navy font-black py-7 rounded-2xl">
-                    GET STARTED
-                  </Button>
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button className="w-full bg-neon text-navy font-black py-7 rounded-2xl text-xs uppercase tracking-widest">
+                      GET STARTED
+                    </Button>
+                  </a>
                 </div>
               </div>
             </motion.div>

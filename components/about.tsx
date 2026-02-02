@@ -66,7 +66,7 @@ export default function About() {
             </motion.p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 lg:gap-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -75,15 +75,15 @@ export default function About() {
                   transition={{ delay: 0.1 * index }}
                   viewport={{ once: true }}
                 >
-                  <div className="glass-card p-6 group hover:border-neon/30 transition-all cursor-hover-trigger overflow-hidden relative">
-                    <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ArrowUpRight className="w-4 h-4 text-neon" />
+                  <div className="glass-card p-5 sm:p-6 group hover:border-neon/30 transition-all cursor-hover-trigger overflow-hidden relative">
+                    <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 text-neon" />
                     </div>
-                    <stat.icon className="h-6 w-6 text-neon mb-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-3xl font-heading font-black text-white mb-1">
+                    <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-neon mb-3 sm:mb-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="text-2xl sm:text-3xl font-heading font-black text-white mb-0.5 sm:mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{stat.label}</div>
+                    <div className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{stat.label}</div>
                   </div>
                 </motion.div>
               ))}

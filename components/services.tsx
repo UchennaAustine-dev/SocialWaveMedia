@@ -90,7 +90,7 @@ export default function Services() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-[300px] gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-[240px] sm:auto-rows-[300px] gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -112,10 +112,10 @@ export default function Services() {
               </div>
 
               {/* Content Layer */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
+              <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-between z-10">
                 <div className="flex justify-between items-start">
-                  <div className={`p-4 rounded-2xl ${service.color} text-white`}>
-                    <service.icon className="w-6 h-6" />
+                  <div className={`p-3 sm:p-4 rounded-2xl ${service.color} text-white`}>
+                    <service.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <a 
                     href="#contact"
@@ -126,10 +126,10 @@ export default function Services() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-neon transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-neon transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 line-clamp-2 text-sm sm:text-base">
+                  <p className="text-gray-400 line-clamp-2 text-xs sm:text-base">
                     {service.description}
                   </p>
                 </div>

@@ -116,13 +116,13 @@ export default function Footer() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-card p-8 sm:p-12 mb-24 relative overflow-hidden group"
+          className="glass-card p-8 sm:p-12 mb-20 relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-neon/10 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-neon/20" />
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">Weekly Digital Insights</h3>
-              <p className="text-gray-400 text-lg">Join 2,000+ brand owners riding the digital wave.</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Weekly Digital Insights</h3>
+              <p className="text-gray-400 text-base sm:text-lg">Join 2,000+ brand owners riding the digital wave.</p>
             </div>
             <div className="flex w-full md:w-auto max-w-md gap-3">
               <AnimatePresence mode="wait">
@@ -130,7 +130,7 @@ export default function Footer() {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-neon/10 border border-neon/20 rounded-2xl h-16 px-10 flex items-center justify-center text-neon font-bold gap-2 w-full"
+                    className="bg-neon/10 border border-neon/20 rounded-2xl h-14 sm:h-16 px-8 sm:px-10 flex items-center justify-center text-neon font-bold text-xs sm:text-sm gap-2 w-full uppercase tracking-widest"
                   >
                     WELCOME TO THE WAVE! <Check size={18} />
                   </motion.div>
@@ -144,11 +144,11 @@ export default function Footer() {
                   >
                     <Input 
                       placeholder="Direct Email..." 
-                      className="bg-white/5 border-white/10 rounded-2xl h-16 px-6 text-white text-lg focus-visible:ring-neon"
+                      className="bg-white/5 border-white/10 rounded-2xl h-14 sm:h-16 px-5 sm:px-6 text-white text-base sm:text-lg focus-visible:ring-neon flex-1"
                     />
                     <Button 
                       onClick={handleJoin}
-                      className="bg-neon text-navy font-black rounded-2xl h-16 px-10 hover:shadow-[0_0_20px_rgba(45,252,191,0.4)] transition-all"
+                      className="bg-neon text-navy font-black rounded-2xl h-14 sm:h-16 px-8 sm:px-10 hover:shadow-[0_0_20px_rgba(45,252,191,0.4)] transition-all text-xs sm:text-sm uppercase tracking-widest"
                     >
                       JOIN
                     </Button>

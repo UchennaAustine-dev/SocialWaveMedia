@@ -119,31 +119,31 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-8 items-center py-6 border-t border-white/10 w-full max-w-4xl"
+            className="flex flex-col sm:flex-row justify-center gap-8 items-center py-8 border-t border-white/10 w-full max-w-4xl"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-navy bg-gray-800 flex items-center justify-center overflow-hidden">
-                    <Image src={`/reviews/cus${i}.jpeg`} alt="Client" width={32} height={32} />
+                  <div key={i} className="w-9 h-9 rounded-full border-2 border-navy bg-gray-800 flex items-center justify-center overflow-hidden">
+                    <Image src={`/reviews/cus${i}.jpeg`} alt="Client" width={36} height={36} />
                   </div>
                 ))}
               </div>
               <div className="text-left">
-                <div className="flex text-neon">
+                <div className="flex text-neon mb-0.5">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} className="w-3 h-3 fill-current" />
                   ))}
                 </div>
-                <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Trusted by 50+ clients</p>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Trusted by 50+ clients</p>
               </div>
             </div>
             
-            <div className="hidden sm:flex gap-8 text-gray-500 font-bold text-sm tracking-widest">
+            <div className="flex gap-4 sm:gap-8 text-gray-500 font-black text-[10px] sm:text-xs tracking-[0.2em]">
               <span>STRATEGY</span>
-              <span>•</span>
+              <span className="opacity-30">•</span>
               <span>CREATIVE</span>
-              <span>•</span>
+              <span className="opacity-30">•</span>
               <span>GROWTH</span>
             </div>
           </motion.div>
