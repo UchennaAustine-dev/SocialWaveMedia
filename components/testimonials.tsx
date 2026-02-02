@@ -102,9 +102,9 @@ export default function Testimonials() {
           >
             Voice of the Wave
           </motion.h2>
-          <h1 className="text-massive text-white">
+          <h2 className="text-massive text-white">
             WE LET OUR <span className="text-neon glow">RESULTS</span> DO THE TALKING
-          </h1>
+          </h2>
         </div>
 
         <div className="relative min-h-[500px] flex items-center justify-center">

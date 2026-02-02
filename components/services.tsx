@@ -69,9 +69,9 @@ export default function Services() {
             className="max-w-2xl"
           >
             <h2 className="hashtag mb-4">Precision Services</h2>
-            <h1 className="text-massive text-white mb-6">
+            <h2 className="text-massive text-white mb-6">
               CRAFTING <span className="text-neon glow italic">LEGENDS</span> IN THE DIGITAL SPACE
-            </h1>
+            </h2>
             <p className="text-lg text-gray-400">
               We provide a full spectrum of digital marketing solutions tailored to ambitious 
               brands ready to dominate their industries.

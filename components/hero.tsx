@@ -66,10 +66,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-huge text-white mb-2">
-              RIDE THE <span className="text-neon glow">DIGITAL</span>
-            </h1>
             <h1 className="text-huge text-white">
+              RIDE THE <span className="text-neon glow">DIGITAL</span><br />
               WAVE <span className="text-border">TO SUCCESS</span>
             </h1>
           </motion.div>
