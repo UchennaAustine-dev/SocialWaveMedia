@@ -93,21 +93,25 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
-            <Button
-              size="lg"
-              className="bg-neon text-navy hover:bg-neon/90 font-bold text-lg px-10 py-7 rounded-full shadow-[0_0_20px_rgba(45,252,191,0.3)] transition-all duration-300 hover:scale-105"
-            >
-              Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              className="glass text-white border-white/20 hover:bg-white/10 font-bold text-lg px-10 py-7 rounded-full transition-all duration-300 hover:scale-105"
-            >
-              <Play className="mr-2 h-5 w-5 fill-white" />
-              Watch Showreel
-            </Button>
+            <a href="#contact">
+              <Button
+                size="lg"
+                className="bg-neon text-navy hover:bg-neon/90 font-bold text-lg px-10 py-7 rounded-full shadow-[0_0_20px_rgba(45,252,191,0.3)] transition-all duration-300 hover:scale-105"
+              >
+                Get Started Today
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <a href="#portfolio">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="glass text-white border-white/20 hover:bg-white/10 font-bold text-lg px-10 py-7 rounded-full transition-all duration-300 hover:scale-105"
+              >
+                <Play className="mr-2 h-5 w-5 fill-white" />
+                Watch Showreel
+              </Button>
+            </a>
           </motion.div>
 
           {/* Trust Footnote */}

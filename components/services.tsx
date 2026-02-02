@@ -84,9 +84,9 @@ export default function Services() {
             viewport={{ once: true }}
             className="hidden md:block"
           >
-            <button className="flex items-center gap-2 text-neon font-bold uppercase tracking-widest hover:gap-4 transition-all">
+            <a href="#contact" className="flex items-center gap-2 text-neon font-bold uppercase tracking-widest hover:gap-4 transition-all">
               All Solutions <ArrowUpRight className="w-5 h-5" />
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -117,12 +117,12 @@ export default function Services() {
                   <div className={`p-4 rounded-2xl ${service.color} text-white`}>
                     <service.icon className="w-6 h-6" />
                   </div>
-                  <motion.div 
-                    whileHover={{ rotate: 45 }}
-                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                  <a 
+                    href="#contact"
+                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:rotate-45"
                   >
                     <ArrowUpRight className="w-5 h-5 text-neon" />
-                  </motion.div>
+                  </a>
                 </div>
 
                 <div>

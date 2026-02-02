@@ -1,12 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Check } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Footer() {
+  const [newsStatus, setNewsStatus] = useState<"idle" | "joined">("idle");
+
+  const handleJoin = () => {
+    setNewsStatus("joined");
+    setTimeout(() => setNewsStatus("idle"), 3000);
+  };
+
   const socialLinks = [
     { name: "Instagram", href: "https://www.instagram.com/s.w.m.agency", icon: Instagram },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/social-wave-media-921252298", icon: Linkedin },
@@ -117,13 +125,36 @@ export default function Footer() {
               <p className="text-gray-400 text-lg">Join 2,000+ brand owners riding the digital wave.</p>
             </div>
             <div className="flex w-full md:w-auto max-w-md gap-3">
-              <Input 
-                placeholder="Direct Email..." 
-                className="bg-white/5 border-white/10 rounded-2xl h-16 px-6 text-white text-lg focus-visible:ring-neon"
-              />
-              <Button className="bg-neon text-navy font-black rounded-2xl h-16 px-10 hover:shadow-[0_0_20px_rgba(45,252,191,0.4)] transition-all">
-                JOIN
-              </Button>
+              <AnimatePresence mode="wait">
+                {newsStatus === "joined" ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-neon/10 border border-neon/20 rounded-2xl h-16 px-10 flex items-center justify-center text-neon font-bold gap-2 w-full"
+                  >
+                    WELCOME TO THE WAVE! <Check size={18} />
+                  </motion.div>
+                ) : (
+                  <motion.div 
+                    key="input"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex w-full gap-3"
+                  >
+                    <Input 
+                      placeholder="Direct Email..." 
+                      className="bg-white/5 border-white/10 rounded-2xl h-16 px-6 text-white text-lg focus-visible:ring-neon"
+                    />
+                    <Button 
+                      onClick={handleJoin}
+                      className="bg-neon text-navy font-black rounded-2xl h-16 px-10 hover:shadow-[0_0_20px_rgba(45,252,191,0.4)] transition-all"
+                    >
+                      JOIN
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
@@ -135,7 +166,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-10">
             {["Privacy", "Terms", "Cookies"].map((legal) => (
-              <a key={legal} href="#" className="text-gray-500 hover:text-white transition-colors text-[10px] font-black uppercase tracking-[0.2em]">
+              <a key={legal} href="#contact" className="text-gray-500 hover:text-white transition-colors text-[10px] font-black uppercase tracking-[0.2em]">
                 {legal}
               </a>
             ))}

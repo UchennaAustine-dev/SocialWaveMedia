@@ -122,9 +122,9 @@ export default function Portfolio() {
                         </div>
                       ))}
                     </div>
-                    <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-300">
+                    <a href="#contact" className="w-10 h-10 rounded-full glass flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-navy transition-all duration-300">
                       <ArrowUpRight size={18} />
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -138,11 +138,11 @@ export default function Portfolio() {
            viewport={{ once: true }}
            className="mt-20 text-center"
         >
-          <button className="text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2 mx-auto group">
+          <a href="#contact" className="text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2 mx-auto group w-fit">
             View All Ventures 
             <span className="w-8 h-px bg-neon/50 group-hover:w-12 transition-all" />
             <ArrowUpRight className="w-4 h-4 text-neon" />
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
