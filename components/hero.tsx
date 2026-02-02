@@ -101,6 +101,7 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
+              variant="ghost"
               size="lg"
               className="glass text-white border-white/20 hover:bg-white/10 font-bold text-lg px-10 py-7 rounded-full transition-all duration-300 hover:scale-105"
             >

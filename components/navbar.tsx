@@ -54,7 +54,7 @@ export default function Navbar() {
         }`}>
           <div className="flex justify-between items-center">
             <motion.div whileHover={{ scale: 1.02 }} className="flex-shrink-0">
-              <a href="#home" className="block p-2 glass rounded-2xl border border-white/5 shadow-inner">
+              <a href="#home" className="block p-2 glass rounded-2xl border border-white/10 shadow-[0_0_20px_rgba(45,252,191,0.1)] hover:shadow-[0_0_25px_rgba(45,252,191,0.2)] transition-all">
                 <Image
                   src="/images/logo.jpg"
                   alt="Social Wave Media"
@@ -98,7 +98,7 @@ export default function Navbar() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:text-neon glass h-10 w-10 p-0"
+                className="text-white hover:text-neon glass h-10 w-10 p-0 border border-white/10"
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </Button>

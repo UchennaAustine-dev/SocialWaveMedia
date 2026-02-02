@@ -131,7 +131,7 @@ export default function Testimonials() {
                         src={testimonials[activeIndex].image}
                         alt={testimonials[activeIndex].name}
                         fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        className="object-cover transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
                     </div>
@@ -173,18 +173,18 @@ export default function Testimonials() {
           {/* Controls */}
           <div className="absolute -bottom-20 lg:bottom-auto lg:-left-10 lg:top-1/2 lg:-translate-y-1/2 flex lg:flex-col gap-4">
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               onClick={prevTestimonial}
-              className="w-14 h-14 rounded-full border-white/10 glass hover:bg-neon hover:text-navy transition-all duration-300"
+              className="w-14 h-14 rounded-full border-white/10 glass text-white hover:bg-neon hover:text-navy transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               onClick={nextTestimonial}
-              className="w-14 h-14 rounded-full border-white/10 glass hover:bg-neon hover:text-navy transition-all duration-300"
+              className="w-14 h-14 rounded-full border-white/10 glass text-white hover:bg-neon hover:text-navy transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6" />
             </Button>
